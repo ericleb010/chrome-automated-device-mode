@@ -11,7 +11,7 @@ var parseURL = require("url").parse;
 var port = parseInt(process.env.PORT, 10) || 8090;
 
 http.createServer(requestHandler).listen(port);
-console.log("Started hosted mode server at http://localhost:" + port);
+console.log("Started hosted mode server at http://192.168.0.102:" + port);
 
 function requestHandler(request, response)
 {
@@ -94,7 +94,7 @@ function proxy(filePath)
 {
     if (!(filePath in proxyFilePathToURL))
         return null;
-    return fetch("http://localhost:9222/json/version")
+    return fetch("http://192.168.0.102:9222/json/version")
         .then(onBrowserMetadata);
 
     function onBrowserMetadata(metadata)
