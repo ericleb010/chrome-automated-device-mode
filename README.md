@@ -1,1 +1,0 @@
-# chrome-automated-device-mode
